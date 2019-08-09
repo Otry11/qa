@@ -1,0 +1,93 @@
+﻿1.	Опишите своими словами, как вы понимаете фронтенд и бекенд. Приведите по 1 примеру вида тестирования, применимого к фронтенду и бекенду, соответственно.
+2.	Что такое кросс-браузерное тестирование? 
+3.	Предположим вы нашли баг на веб-странице. Какие данные помимо шагов воспроизведения, вы можете приложить к баг-репорту, чтобы разработчику было проще локализовать проблему?
+4.	Опишите своими словами, как вы понимаете GET и POST запросы. В чем их основное различие?
+5.	Опишите своими словами, как вы понимаете API-тестирование. 
+
+
+
+
+
+1.	Fronted – это клиентская сторона веб-сервиса или приложения, то есть все то, что видит пользователь. К фронтэнду применимо, например, UX/UI-тестирование.
+
+Backend – серверная часть веб-сервиса или приложения, набор аппаратных и программных средств, с помощью которых реализуется работа сервиса. То есть это всё то, что скрыто от пользователя. Для тестирования бэкэнда можно применить API-тестирование.
+
+
+2.	Кросс-браузерным тестированием является тестирование одного и того же сайта в нескольких различных браузерах и/или различных версиях браузера. Так как браузер по сути является интерпретатором, то в разных браузерах содержимое веб-страницы может выглядеть по-разному.
+
+3.	Кроме шагов воспроизведения можно приложить скриншот, что особенно актуально в случае съехавшей верстки. Также необходимо пользоваться панелью разработчика в браузере, чтобы в случае ошибки указать конкретное место в коде или конкретный запрос, который выполняется некорректно.
+
+4.	GET и POST запросы, как и множество других запросов, используются для передачи информации между фронтэндом и бэкэндом. Отличие данных запросов в том, что GET-запрос используется для получения информации с сервера, а POST-запрос – для ее изменения или создания.
+
+5.	API – набор классов, процедур, функций, предоставляемых приложением для использования во внешних сервисах. Соответственно, тестируя непосредственно через API, мы минуем графический интерфейс, что позволяет начать тестирование на более ранних этапах разработки, не зависеть от небольших изменений дизайна сайта, а также четко понять, где засел какой-либо найденный баг – на фронтэнде или на бэкэнде. 
+В целом тестирование проходит с помощью отправления различных запросов на сервер, а также к нему применимы практически все виды тестирования, поскольку API является полноценным самостоятельным продуктом.
+
+
+
+
+API.
+
+1. Darth Vader
+
+https://swapi.co/api/people/4/
+
+2. Ruby Jersey
+
+POST /orders/populate HTTP/1.1
+Host: 31.220.42.115:3000
+Content-Type: application/json
+Cookie: __profilin=p%3Dt; guest_token=IlF4NDg0aURjRVpwOERncFhSTWVZWHcxNTY1MzE1NTAyMzUwIg%3D%3D--6b7fa88ab833f3e7e20f28201441c4a435a7b57b; _sandbox_session=K9oyxUVIIYMDYAzpIgaj2EcapIhQr8rjg6%2BkU43l%2FRxHQREH%2FSiwiTYogqbjV6pjGxhopiTK6j2fE8s58eOkq70PntKGl0u8upoW0HNkwepeDT9K8GlDoG0afO2o5RSESzn3%2BRmPDVilPTIdDYo%3D--stPPLG1CFppXMeOa--Z9g04JjITi%2Fxwx%2FvmkECTw%3D%3D,__profilin=p%3Dt; guest_token=IlF4NDg0aURjRVpwOERncFhSTWVZWHcxNTY1MzE1NTAyMzUwIg%3D%3D--6b7fa88ab833f3e7e20f28201441c4a435a7b57b; _sandbox_session=K9oyxUVIIYMDYAzpIgaj2EcapIhQr8rjg6%2BkU43l%2FRxHQREH%2FSiwiTYogqbjV6pjGxhopiTK6j2fE8s58eOkq70PntKGl0u8upoW0HNkwepeDT9K8GlDoG0afO2o5RSESzn3%2BRmPDVilPTIdDYo%3D--stPPLG1CFppXMeOa--Z9g04JjITi%2Fxwx%2FvmkECTw%3D%3D; __profilin=p%3Dt; _sandbox_session=jdNrm5SiX1yUFInU6TtQ3HIpWCVqf8UO4cvddx0goX6lmYdEjtmYtUh0hcl1KWMKA%2FSthAYzPTbk58tiCA8tcpRC8MxPz10xl%2BtruUjDfupOqQHy4Z2rSjeb7ml%2FY8FH1cRmSbVCeS88O73LxyI%3D--p77OGtC7TbrlzExo--zzu6u%2B6DWXegAFXZ3F8f5A%3D%3D
+User-Agent: PostmanRuntime/7.15.2
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: 107532aa-d5d1-428f-9ecf-0d59be52bdda,25b2e9b7-8439-4df2-8ff9-60e1a57a1ab8
+Accept-Encoding: gzip, deflate
+Referer: http://31.220.42.115:3000/orders/populate
+Connection: keep-alive
+cache-control: no-cache
+
+{
+  "variant_id": "6",
+  "quantity": "1"
+}
+
+
+3. Empty Cart
+
+POST /cart/empty/ HTTP/1.1
+Host: 31.220.42.115:3000
+Cookie: __profilin=p%3Dt; guest_token=IlF4NDg0aURjRVpwOERncFhSTWVZWHcxNTY1MzE1NTAyMzUwIg%3D%3D--6b7fa88ab833f3e7e20f28201441c4a435a7b57b; _sandbox_session=yXq85mjLp3V%2FBVwVVhqdFgcR9%2Fp9uFY%2ByngmE7jAzvec2gIITxnqTxV%2F1NeeIUJWhHzGxxp5npAtc63KXIdpRE4U28w%2BhGcKdKoEJhaiDmKZO%2BuScrOQ2jkYV6B4T3tqlQAW00%2BWj2OPyGyVWOE%3D--WdZR%2FvK%2Bbpc7ceZ4--s0WsWCs4KMHCvsBASoLe3g%3D%3D,__profilin=p%3Dt; guest_token=IlF4NDg0aURjRVpwOERncFhSTWVZWHcxNTY1MzE1NTAyMzUwIg%3D%3D--6b7fa88ab833f3e7e20f28201441c4a435a7b57b; _sandbox_session=yXq85mjLp3V%2FBVwVVhqdFgcR9%2Fp9uFY%2ByngmE7jAzvec2gIITxnqTxV%2F1NeeIUJWhHzGxxp5npAtc63KXIdpRE4U28w%2BhGcKdKoEJhaiDmKZO%2BuScrOQ2jkYV6B4T3tqlQAW00%2BWj2OPyGyVWOE%3D--WdZR%2FvK%2Bbpc7ceZ4--s0WsWCs4KMHCvsBASoLe3g%3D%3D; __profilin=p%3Dt; _sandbox_session=F4LU7BMSj22XF6IhYhs0SAvjbyNHTjZJoB4p8RrvaEBPSlIkd52sMOYUyYxf0yPZjfT3zGxnpeyepwG6E5tiWg01QsPOfr%2FmpCSVu6vpyA0RtB488WkjU0qX7p3vPALeGX1znI3h4%2BIMwiXmcGw%3D--ipTHgY%2BY%2Fwf2hqBK--%2BcHG9B3L1DiAIYXfGEJ2IA%3D%3D
+User-Agent: PostmanRuntime/7.15.2
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: 7ef64be8-19aa-4e23-a16c-34c22eade50d,edf1f0f3-3524-485e-bbd8-3257e1927598
+Accept-Encoding: gzip, deflate
+Referer: http://31.220.42.115:3000/cart/empty/
+Connection: keep-alive
+cache-control: no-cache
+
+
+Content-Disposition: form-data; name="_method"
+
+put
+------WebKitFormBoundary7MA4YWxkTrZu0gW--,
+Content-Disposition: form-data; name="_method"
+
+put
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="commit"
+
+Empty Cart
+------WebKitFormBoundary7MA4YWxkTrZu0gW--,
+Content-Disposition: form-data; name="_method"
+
+put
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="commit"
+
+Empty Cart
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="authenticity_token"
+
+Z7x+16n6E1CdvBFZ4CfZ4p2sLQVZoLSqv9Dk1R6nDimp3F7OnZ5dRR6+7BOpRWpmQSIfR81QJcHEGbOh0JSLXw==
+------WebKitFormBoundary7MA4YWxkTrZu0gW—

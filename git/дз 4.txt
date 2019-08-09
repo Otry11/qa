@@ -1,0 +1,90 @@
+1.	Ќапишите запрос, который выведет все записи из таблицы Products
+2.	Ќапишите запрос, который выведет только те записи из таблицы Products, в которых цена (product_price) больше 4
+3.	Ќапишите запрос, которые вернет только те записи из таблицы Customers, в которых cust_name Ќ≈ равно Fun4All
+4.	Ќапишите запрос, который вернет все записи из таблицы OrderItems, отсортированные по уменьшению цены
+5.	Ќапишите запрос, добавл€ющий новую запись в таблицу Products. ƒанные можно использовать произвольные.
+
+
+1. SELECT * FROM academy.Products;
+
+2. SELECT * FROM academy.Products WHERE prod_price >= '4';
+
+3. SELECT * FROM academy.Customers WHERE cust_name != 'Fun4All';
+
+4. SELECT * FROM academy.OrderItems ORDER BY item_price DESC;
+
+5. INSERT INTO Products (prod_id, vend_id, prod_name, prod_price, prod_desc)
+VALUES ('76', 'Velo', 'Lobster', '69', 'Pleasant');
+
+
+
+API.
+
+POST /signup HTTP/1.1
+Host: 31.220.42.115:3000
+Cookie: __profilin=p%3Dt; guest_token=IlF4NDg0aURjRVpwOERncFhSTWVZWHcxNTY1MzE1NTAyMzUwIg%3D%3D--6b7fa88ab833f3e7e20f28201441c4a435a7b57b; _sandbox_session=lEFNfYUJU96Lc2dfCfRIoFAH%2FpbB%2Bw3boPTmONRHQJac62IgroGj0JTEN3MzZrTsf4PwBqvkuDsPQXxBlPnLhn1qPfs3DcdWL6X6c5fAZQMGkWjpBShc6J8FLNs2DIsqjprMIT3l%2BWRu2rcLJeg%3D--Fq5pCXwrSJWyrWoC--ygTqwl3bXJTIcjchf2A%2FQQ%3D%3D,__profilin=p%3Dt; guest_token=IlF4NDg0aURjRVpwOERncFhSTWVZWHcxNTY1MzE1NTAyMzUwIg%3D%3D--6b7fa88ab833f3e7e20f28201441c4a435a7b57b; _sandbox_session=lEFNfYUJU96Lc2dfCfRIoFAH%2FpbB%2Bw3boPTmONRHQJac62IgroGj0JTEN3MzZrTsf4PwBqvkuDsPQXxBlPnLhn1qPfs3DcdWL6X6c5fAZQMGkWjpBShc6J8FLNs2DIsqjprMIT3l%2BWRu2rcLJeg%3D--Fq5pCXwrSJWyrWoC--ygTqwl3bXJTIcjchf2A%2FQQ%3D%3D; __profilin=p%3Dt; _sandbox_session=xFhFdUcOA2YXQxYCaPQya9TCmaOC1LR8bt8aQjeHPZeeh4Z8PjuOhTaU3mFN7coGKLOr1%2BO2HywKPQY1fxaKoUamScynk1XlDO7VTPlr%2F%2Fg99zz3lwRMwOKS5VAgLwiIAJInpKQtgLCI6IHqt6F4L1L3gcNvh%2FhkUzUe8WRPk7%2FS7zTrIiJ27Af4eEhEquZSBeKwf1gVspwzDIocWfusW6D%2B48qmzHxcdKToKvRUHlIuR%2BpfPVZ6kR45e7kW%2F9DCNE3CLowljbO8nEuOc9aD7a2xBf9IottM4C4rOoDGCJL3DyU%2BlJs00cGE7kOb9ouJ7Z6A75%2BHJEEYn6C568eV7DzkaA9AE4dxUjrobtnHGqJn5LBEc1FCvzOA--h9q2YpmKG5lA56tC--BK9%2BlLYxpwFSr19ZWwmRWw%3D%3D
+User-Agent: PostmanRuntime/7.15.2
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: dbf6bf5a-afdb-44c2-8d58-4fb3ab3cd06d,6e0e5dbd-b1e1-422f-b76b-c0e188032e09
+Accept-Encoding: gzip, deflate
+Referer: http://31.220.42.115:3000/signup
+Connection: keep-alive
+cache-control: no-cache
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+
+Content-Disposition: form-data; name="spree_user[email]"
+
+test1234567@gmail.com
+------WebKitFormBoundary7MA4YWxkTrZu0gW--,
+Content-Disposition: form-data; name="spree_user[email]"
+
+test1234567@gmail.com
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="spree_user[password]"
+
+123123
+------WebKitFormBoundary7MA4YWxkTrZu0gW--,
+Content-Disposition: form-data; name="spree_user[email]"
+
+test1234567@gmail.com
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="spree_user[password]"
+
+123123
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="spree_user[password_confirmation]"
+
+123123
+------WebKitFormBoundary7MA4YWxkTrZu0gW--,
+Content-Disposition: form-data; name="spree_user[email]"
+
+test1234567@gmail.com
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="spree_user[password]"
+
+123123
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="spree_user[password_confirmation]"
+
+123123
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="authenticity_token"
+
+XV0bWe65EijGyetOpMuaEaIBDUq4Dbiijr3jmFUPyfOTPTtA2t1cPUXLFgTtqSmVfo8/CCz9Kcn1dLTsmzxMhQ==
+------WebKitFormBoundary7MA4YWxkTrZu0gWЧ
+
+
+
+
+Selenium..
+
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get('http://31.220.42.115:3000/login')
+driver.find_element_by_name('spree_user[email]').click()
+driver.find_element_by_name('spree_user[email]').send_keys('test1234567@gmail.com')
+driver.find_element_by_name('spree_user[password]').click()
+driver.find_element_by_name('spree_user[password]').send_keys(123123)
+driver.find_element_by_name('commit').click()
